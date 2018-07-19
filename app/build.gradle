@@ -1,5 +1,9 @@
 apply plugin: 'com.android.application'
 
+def apikeyPropertiesFile = rootProject.file('backendless.keys')
+def apikeyProperties = new Properties()
+apikeyProperties.load(new FileInputStream(apikeyPropertiesFile))
+
 android {
     compileSdkVersion 27
     defaultConfig {
@@ -8,7 +12,9 @@ android {
         targetSdkVersion 27
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        buildConfigField('String', 'BACKENDLESS_APP_ID', apikeyProperties['applicationId'])
+        buildConfigField('String', 'BACKENDLESS_API_KEY', apikeyProperties['apiKey'])
     }
     buildTypes {
         release {
@@ -23,7 +29,7 @@ android {
 }
 
 dependencies {
-    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.backendless:backendless:5.0.2'
     implementation 'com.android.support:appcompat-v7:27.1.1'
     implementation 'com.android.support.constraint:constraint-layout:1.1.2'
 }
