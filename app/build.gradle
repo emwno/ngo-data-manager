@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'realm-android'
 
 def apikeyPropertiesFile = rootProject.file('backendless.keys')
 def apikeyProperties = new Properties()
