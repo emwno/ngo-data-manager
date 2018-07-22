@@ -10,12 +10,20 @@ public class Community {
     private String leaderName;
     private String phone;
     private String address;
+    private Soil soilType;
+    private int cultivableArea;
+    private List<Pest> pests;
     private List<Community> treeData;
+
     private Date created;
     private Date updated;
 
     public String getObjectId() {
         return objectId;
+    }
+
+    public void setObjectId(String objectId) {
+        this.objectId = objectId;
     }
 
     public String getName() {
@@ -50,6 +58,30 @@ public class Community {
         this.address = address;
     }
 
+    public Soil getSoilType() {
+        return soilType;
+    }
+
+    public void setSoilType(Soil soilType) {
+        this.soilType = soilType;
+    }
+
+    public int getCultivableArea() {
+        return cultivableArea;
+    }
+
+    public void setCultivableArea(int cultivableArea) {
+        this.cultivableArea = cultivableArea;
+    }
+
+    public List<Pest> getPests() {
+        return pests;
+    }
+
+    public void setPests(List<Pest> pests) {
+        this.pests = pests;
+    }
+
     public List<Community> getTreeData() {
         return treeData;
     }
@@ -62,8 +94,15 @@ public class Community {
         return created;
     }
 
+    public void setCreated(Date created) {
+        this.created = created;
+    }
+
     public Date getUpdated() {
         return updated;
     }
 
+    public void setUpdated(Date updated) {
+        this.updated = updated;
+    }
 }

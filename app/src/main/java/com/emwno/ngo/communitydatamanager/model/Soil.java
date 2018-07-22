@@ -9,7 +9,6 @@ public class Soil {
     private Date created;
     private Date updated;
 
-
     public String getObjectId() {
         return objectId;
     }
