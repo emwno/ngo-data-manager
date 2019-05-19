@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.emwno.ngo.communitydatamanager">
+    package="com.emwno.ngo.datamanager">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -12,6 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,6 +20,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:label="@string/new_community" android:name=".FormActivity" />
+        <activity android:label="@string/table" android:name=".TableActivity" />
+        <activity android:label="@string/search" android:name=".SearchActivity" />
+        <activity android:label="@string/edit_form" android:name=".EditFormActivity" />
     </application>
 
 </manifest>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="search"
+            type="com.emwno.ngo.datamanager.model.Search" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/searchFieldTitle"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="#DDDDDD"
+            android:gravity="center"
+            android:text="@{search.name}" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/searchQuery"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:drawableEnd="@drawable/menu_right"
+            android:hint="Select Query"
+            android:padding="16dp"
+            android:textColor="#222222"
+            android:textSize="14sp"
+            app:layout_constraintHorizontal_weight="2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/searchFieldTitle" />
+
+        <android.support.v7.widget.AppCompatEditText
+            android:id="@+id/searchData"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:background="@null"
+            android:gravity="end"
+            android:hint="Enter data"
+            android:imeOptions="actionDone"
+            android:inputType="textNoSuggestions"
+            android:maxLines="1"
+            android:padding="16dp"
+            android:text="@={search.data}"
+            android:textColor="#000000"
+            android:textSize="13sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="3"
+            app:layout_constraintStart_toEndOf="@+id/searchQuery"
+            app:layout_constraintTop_toBottomOf="@+id/searchFieldTitle"
+            app:validateEmpty="@{true}" />
+
+        <View
+            android:id="@+id/divider1"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:background="#dddddd"
+            app:layout_constraintTop_toBottomOf="@+id/searchFieldTitle" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</layout>

@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="com.emwno.ngo.datamanager.DataBindingHelper" />
+
+        <variable
+            name="community"
+            type="com.emwno.ngo.datamanager.model.Community" />
+
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/landLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/title_land"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="#DDDDDD"
+            android:gravity="center"
+            android:text="Land" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/soilTypeTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:text="Soil Type"
+            android:textColor="#222222"
+            android:textSize="14sp"
+            app:layout_constraintHorizontal_weight="2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title_land" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/soilType"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:gravity="end"
+            android:hint="soil"
+            android:maxLines="1"
+            android:padding="16dp"
+            android:text="@{community.soilType.type}"
+            android:textColor="#000000"
+            android:textSize="13sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="3"
+            app:layout_constraintStart_toEndOf="@+id/soilTypeTitle"
+            app:layout_constraintTop_toBottomOf="@+id/title_land"
+            app:validateEmpty="@{true}" />
+
+        <View
+            android:id="@+id/divider4"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:background="#dddddd"
+            app:layout_constraintTop_toBottomOf="@+id/soilTypeTitle" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/pestTypesTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:text="Pests"
+            android:textColor="#222222"
+            android:textSize="14sp"
+            app:layout_constraintHorizontal_weight="2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/divider4" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/pestTypes"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:gravity="end"
+            android:hint="pest"
+            android:maxLines="1"
+            android:padding="16dp"
+            android:text="@{DataBindingHelper.pestListToString(community.pests)}"
+            android:textColor="#000000"
+            android:textSize="13sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="3"
+            app:layout_constraintStart_toEndOf="@+id/pestTypesTitle"
+            app:layout_constraintTop_toBottomOf="@+id/divider4"
+            app:validateEmpty="@{true}" />
+
+        <View
+            android:id="@+id/divider5"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:background="#dddddd"
+            app:layout_constraintTop_toBottomOf="@+id/pestTypesTitle" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/areaTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:text="Cultivable Area"
+            android:textColor="#222222"
+            android:textSize="14sp"
+            app:layout_constraintHorizontal_weight="2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/divider5" />
+
+        <android.support.v7.widget.AppCompatEditText
+            android:id="@+id/area"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:background="@null"
+            android:gravity="end"
+            android:hint="area"
+            android:imeOptions="actionDone"
+            android:inputType="textNoSuggestions|number"
+            android:maxLines="1"
+            android:padding="16dp"
+            android:text="@={`` + community.cultivableArea}"
+            android:textColor="#000000"
+            android:textSize="13sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="3"
+            app:layout_constraintStart_toEndOf="@+id/areaTitle"
+            app:layout_constraintTop_toBottomOf="@+id/divider5"
+            app:validateEmpty="@{true}" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</layout>

@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="community"
+            type="com.emwno.ngo.datamanager.model.Community" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/generalLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/title_general"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="#DDDDDD"
+            android:gravity="center"
+            android:text="General" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/nameTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:text="Name"
+            android:textColor="#222222"
+            android:textSize="14sp"
+            app:layout_constraintHorizontal_weight="2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title_general" />
+
+        <android.support.v7.widget.AppCompatEditText
+            android:id="@+id/name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:background="@null"
+            android:gravity="end"
+            android:hint="name"
+            android:imeOptions="actionDone"
+            android:inputType="textNoSuggestions"
+            android:maxLines="1"
+            android:padding="16dp"
+            android:text="@={community.name}"
+            android:textColor="#000000"
+            android:textSize="13sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="3"
+            app:layout_constraintStart_toEndOf="@+id/nameTitle"
+            app:layout_constraintTop_toBottomOf="@+id/title_general"
+            app:validateEmpty="@{true}" />
+
+        <View
+            android:id="@+id/divider1"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:background="#dddddd"
+            app:layout_constraintTop_toBottomOf="@+id/nameTitle" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/leaderNameTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:text="Leader Name"
+            android:textColor="#222222"
+            android:textSize="14sp"
+            app:layout_constraintHorizontal_weight="2"
+            app:layout_constraintTop_toBottomOf="@+id/divider1" />
+
+        <android.support.v7.widget.AppCompatEditText
+            android:id="@+id/leaderName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:background="@null"
+            android:gravity="end"
+            android:hint="leader"
+            android:imeOptions="actionDone"
+            android:inputType="textNoSuggestions"
+            android:maxLines="1"
+            android:padding="16dp"
+            android:text="@={community.leaderName}"
+            android:textColor="#000000"
+            android:textSize="13sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="3"
+            app:layout_constraintStart_toEndOf="@+id/leaderNameTitle"
+            app:layout_constraintTop_toBottomOf="@+id/divider1"
+            app:validateEmpty="@{true}" />
+
+        <View
+            android:id="@+id/divider2"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:background="#dddddd"
+            app:layout_constraintTop_toBottomOf="@+id/leaderNameTitle" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/phoneTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:text="Phone"
+            android:textColor="#222222"
+            android:textSize="14sp"
+            app:layout_constraintHorizontal_weight="2"
+            app:layout_constraintTop_toBottomOf="@+id/divider2" />
+
+        <android.support.v7.widget.AppCompatEditText
+            android:id="@+id/phone"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:background="@null"
+            android:gravity="end"
+            android:hint="phone number"
+            android:imeOptions="actionDone"
+            android:inputType="textNoSuggestions|phone"
+            android:maxLines="1"
+            android:padding="16dp"
+            android:text="@={community.phone}"
+            android:textColor="#000000"
+            android:textSize="13sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="3"
+            app:layout_constraintStart_toEndOf="@+id/phoneTitle"
+            app:layout_constraintTop_toBottomOf="@+id/divider2"
+            app:validateEmpty="@{true}" />
+
+        <View
+            android:id="@+id/divider3"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:background="#dddddd"
+            app:layout_constraintTop_toBottomOf="@+id/phoneTitle" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/addressTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:text="Address"
+            android:textColor="#222222"
+            android:textSize="14sp"
+            app:layout_constraintHorizontal_weight="2"
+            app:layout_constraintTop_toBottomOf="@+id/divider3" />
+
+        <android.support.v7.widget.AppCompatEditText
+            android:id="@+id/address"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:background="@null"
+            android:gravity="end"
+            android:hint="address"
+            android:imeOptions="actionDone"
+            android:inputType="textNoSuggestions"
+            android:padding="16dp"
+            android:text="@={community.address}"
+            android:textColor="#000000"
+            android:textSize="13sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="3"
+            app:layout_constraintStart_toEndOf="@+id/addressTitle"
+            app:layout_constraintTop_toBottomOf="@+id/divider3"
+            app:validateEmpty="@{true}" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</layout>

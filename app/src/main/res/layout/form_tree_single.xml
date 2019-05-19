@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="treeData"
+            type="com.emwno.ngo.datamanager.model.TreeData" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/treeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/treeTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ebebeb"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="@{treeData.tree.type}"
+            android:textColor="#222222"
+            android:textSize="12sp" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/treeNumberReceivedTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:text="Number Received"
+            android:textColor="#222222"
+            android:textSize="14sp"
+            app:layout_constraintHorizontal_weight="2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/treeTitle" />
+
+        <android.support.v7.widget.AppCompatEditText
+            android:id="@+id/treeNumberReceived"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:background="@null"
+            android:gravity="end"
+            android:hint="received"
+            android:imeOptions="actionDone"
+            android:inputType="textNoSuggestions|number"
+            android:maxLines="1"
+            android:padding="16dp"
+            android:text="@={`` + treeData.treeNumberReceived}"
+            android:textColor="#000000"
+            android:textSize="13sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="3"
+            app:layout_constraintStart_toEndOf="@+id/treeNumberReceivedTitle"
+            app:layout_constraintTop_toBottomOf="@+id/treeTitle"
+            app:validateEmpty="@{true}" />
+
+        <View
+            android:id="@+id/divider2"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:background="#dddddd"
+            app:layout_constraintTop_toBottomOf="@+id/treeNumberReceivedTitle" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/treeNumberAliveTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:text="Number Alive"
+            android:textColor="#222222"
+            android:textSize="14sp"
+            app:layout_constraintHorizontal_weight="2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/divider2" />
+
+        <android.support.v7.widget.AppCompatEditText
+            android:id="@+id/treeNumberAlive"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:background="@null"
+            android:gravity="end"
+            android:hint="alive"
+            android:imeOptions="actionDone"
+            android:inputType="textNoSuggestions|number"
+            android:maxLines="1"
+            android:padding="16dp"
+            android:text="@={`` + treeData.treeNumberAlive}"
+            android:textColor="#000000"
+            android:textSize="13sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="3"
+            app:layout_constraintStart_toEndOf="@+id/treeNumberAliveTitle"
+            app:layout_constraintTop_toBottomOf="@+id/divider2"
+            app:validateEmpty="@{true}" />
+
+        <View
+            android:id="@+id/divider3"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:background="#dddddd"
+            app:layout_constraintTop_toBottomOf="@+id/treeNumberAlive" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/treeNumberSoldTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:text="Number Sold"
+            android:textColor="#222222"
+            android:textSize="14sp"
+            app:layout_constraintHorizontal_weight="2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/divider3" />
+
+        <android.support.v7.widget.AppCompatEditText
+            android:id="@+id/treeNumberSold"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:background="@null"
+            android:gravity="end"
+            android:hint="sold"
+            android:imeOptions="actionDone"
+            android:inputType="textNoSuggestions|number"
+            android:maxLines="1"
+            android:padding="16dp"
+            android:text="@={`` + treeData.treeNumberSold}"
+            android:textColor="#000000"
+            android:textSize="13sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="3"
+            app:layout_constraintStart_toEndOf="@+id/treeNumberSoldTitle"
+            app:layout_constraintTop_toBottomOf="@+id/divider3"
+            app:validateEmpty="@{true}" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</layout>

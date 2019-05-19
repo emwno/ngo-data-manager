@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">Community Data Manager</string>
+    <string name="app_name">Data Manager</string>
+    <string name="search">Search</string>
+    <string name="edit_form">Edit Community</string>
+    <string name="table">Community Table</string>
+    <string name="new_community">New Community</string>
 </resources>
